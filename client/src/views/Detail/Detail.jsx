@@ -7,19 +7,23 @@ import styles from "./Detail.module.css";
 const Detail = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
-  const [detail, setDetail] = useState()
+  const [detail, setDetail] = useState({})
   const country = useSelector((state) => state.detailCountry);
 
   useEffect(() => {
     dispatch(getCountry(id));
     setDetail(country)
     return () => {setDetail({})}
-  }, [dispatch, id]);
+  }, [dispatch, id, country]);
 
 
   return (
-    <>
-      <div className={styles.container}>
+    <> 
+      {
+        !detail ? <span>Loading...</span>
+        :
+        (
+          <div className={styles.container}>
         <div className={styles.detailContainer}>
           <div className={styles.information}>
             <img className={styles.flagImg} src={detail?.image} alt="flag" />
@@ -62,6 +66,9 @@ const Detail = () => {
           <button className={styles.homeBtn}>Back to Home</button>
         </NavLink>
       </div>
+        )
+      }
+      
     </>
   );
 };
