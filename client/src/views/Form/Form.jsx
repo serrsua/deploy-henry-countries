@@ -190,7 +190,7 @@ const Form = () => {
           </div>
         </div>
 
-        {/*  <div>
+        <div>
           <button
             className={styles.createButton}
             disabled={!formComplete}
@@ -199,30 +199,7 @@ const Form = () => {
             Create
           </button>
         </div>
-        <span>{created}</span> */}
-
-        {!(
-          errors.name ||
-          errors.difficulty ||
-          errors.duration ||
-          errors.season ||
-          errors.countries
-        ) ? (
-          <button
-            className={styles.createButton}
-            type="submit"
-          >
-            Create
-          </button>
-        ) : (
-          <button
-            className={styles.createButton}
-            type="submit"
-            disabled
-          >
-            Please complete the form
-          </button>
-        )}
+        <span>{created}</span>
 
         <NavLink to="/home">
           <button className={styles.homeButton}>Back to Home</button>
