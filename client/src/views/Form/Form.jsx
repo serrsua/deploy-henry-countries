@@ -75,7 +75,7 @@ const Form = () => {
   const submitForm = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:3001/activities", form);
+      await axios.post("/activities", form);
       setCreated("Activity successfully created");
     } catch (error) {
       setCreated("Failed to create activity");
