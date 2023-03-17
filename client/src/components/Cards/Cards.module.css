@@ -46,3 +46,29 @@
     pointer-events: none;
     color: white;
 }
+
+.loading {
+    width: 100px;
+}
+
+.ship {
+    width: 10px;
+    position: absolute;
+    animation: animation-ship 40s linear infinite;
+    z-index: -1;
+}
+
+@keyframes animation-ship {
+    0% {
+      left: 0px;
+    }
+    25% {
+      left: 25%;
+    }
+    75% {
+        left: 75%;
+    }
+    100% {
+        left: 100%;
+    }
+  }

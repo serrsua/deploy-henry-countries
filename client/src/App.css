@@ -1,7 +1,4 @@
 .App {
-  /* display: flex;
-  flex-direction: row;
-  flex-wrap: wrap; */
   text-align: center;
   justify-content: center;
 }
@@ -11,5 +8,6 @@ body {
   background-size: cover;
 
   margin: 0;
-}
 
+  font-family: 'Righteous';
+}

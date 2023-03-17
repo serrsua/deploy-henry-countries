@@ -4,6 +4,7 @@ import { NavLink, useParams } from "react-router-dom";
 import { getCountry } from "../../redux/actions";
 import { clearDetail } from "../../redux/actions";
 import styles from "./Detail.module.css";
+import earth from "../../assets/earth.gif";
 
 const Detail = () => {
   const dispatch = useDispatch();
@@ -13,14 +14,13 @@ const Detail = () => {
 
   useEffect(() => {
     dispatch(getCountry(id));
-    return () => {dispatch(clearDetail)}
+    return () => {dispatch(clearDetail())}
   }, [dispatch, id]);
-
 
   return (
     <> 
       {
-        !country ? <span>Loading...</span>
+        !country.name ? <img className={styles.loading} src={earth} alt="loading-img" />
         :
         (
           <div className={styles.container}>

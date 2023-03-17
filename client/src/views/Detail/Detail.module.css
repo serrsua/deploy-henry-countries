@@ -66,3 +66,7 @@
   height: 30px;
   border-radius: 10px;
 }
+
+.loading {
+  width: 100px;
+}

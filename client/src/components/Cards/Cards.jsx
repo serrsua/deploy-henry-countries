@@ -1,4 +1,6 @@
 import styles from "./Cards.module.css";
+import earth from "../../assets/earth.gif";
+import ship from "../../assets/final-pirat.png";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -131,7 +133,10 @@ const Cards = () => {
       </div>
 
       <div className={styles.cardContainer}>
-        {page?.map((country) => {
+        <img className={styles.ship} src={ship} alt="pirat-ship" />
+        {!page.length ? <img className={styles.loading} src={earth} alt="loading-img" />
+        : 
+        (page.map((country) => {
           return (
             <Card
               key={country.id}
@@ -141,7 +146,8 @@ const Cards = () => {
               continents={country.continents}
             />
           );
-        })}
+        }))
+        }
       </div>
       <div className={styles.buttonContainer}>
         {

@@ -88,7 +88,7 @@ const Form = () => {
         <h1 className={styles.title}>Create an activity</h1>
 
         <div className={styles.nameContainer}>
-          <label>Name</label>
+          <label>Activity Name</label>
           <input
             className={styles.inputName}
             onChange={handleInputs}
@@ -190,7 +190,7 @@ const Form = () => {
           </div>
         </div>
 
-        <div>
+        {/*  <div>
           <button
             className={styles.createButton}
             disabled={!formComplete}
@@ -199,7 +199,30 @@ const Form = () => {
             Create
           </button>
         </div>
-        <span>{created}</span>
+        <span>{created}</span> */}
+
+        {!(
+          errors.name ||
+          errors.difficulty ||
+          errors.duration ||
+          errors.season ||
+          errors.countries
+        ) ? (
+          <button
+            className={styles.createButton}
+            type="submit"
+          >
+            Create
+          </button>
+        ) : (
+          <button
+            className={styles.createButton}
+            type="submit"
+            disabled
+          >
+            Please complete the form
+          </button>
+        )}
 
         <NavLink to="/home">
           <button className={styles.homeButton}>Back to Home</button>
