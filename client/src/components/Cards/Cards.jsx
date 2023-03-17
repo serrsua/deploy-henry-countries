@@ -49,18 +49,22 @@ const Cards = () => {
     } else {
       setCountries([...filterCountries]);
     }
+    e.target.value = "";
   };
 
   const orderName = (e) => {
     dispatch(orderByName(e.target.value));
+    e.target.value = "";
   };
 
   const orderPopulation = (e) => {
     dispatch(orderByPopulation(e.target.value));
+    e.target.value = "";
   };
 
   const filterByActivity = (e) => {
     dispatch(activityFilter(e.target.value));
+    e.target.value = "";
   };
 
   let newAcitivities;
