@@ -3,6 +3,7 @@ export const GET_COUNTRIES = "GET_COUNTRIES";
 export const GET_COUNTRY = "GET_COUNTRY";
 export const GET_ACTIVITIES = "GET_ACTIVITIES";
 export const GET_COUNTRY_BY_NAME = "GET_COUNTRY_BY_NAME";
+export const CLEAR_DETAIL = "CLEAR_DETAIL";
 
 export const BY_CONTINENT = "BY_CONTINENT";
 export const BY_ACTIVITY = "BY_ACTIVITY";
@@ -30,6 +31,14 @@ export const getCountry = (id) => {
     });
   };
 };
+
+export const clearDetail = () => {
+  return {
+    type: CLEAR_DETAIL,
+    payload: [],
+  }
+
+}
 
 export const getCountryByName = (name) => {
   return async function (dispatch) {

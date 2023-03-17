@@ -7,6 +7,7 @@ import {
   BY_ACTIVITY,
   BY_POPULATION,
   GET_COUNTRY_BY_NAME,
+  CLEAR_DETAIL,
 } from "./actions";
 
 const initialState = {
@@ -28,6 +29,11 @@ export default function reducer(state = initialState, { type, payload }) {
         ...state,
         detailCountry: payload,
       };
+    case CLEAR_DETAIL:
+      return {
+        ...state,
+        detailCountry: payload,
+      }
     case GET_ACTIVITIES:
       return {
         ...state,
