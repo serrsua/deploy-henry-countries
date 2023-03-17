@@ -1,0 +1,15 @@
+.App {
+  /* display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; */
+  text-align: center;
+  justify-content: center;
+}
+body {
+  background-image: url("../src/assets/background-landing.jpg");
+  background-attachment: scroll;
+  background-size: cover;
+
+  margin: 0;
+}
+

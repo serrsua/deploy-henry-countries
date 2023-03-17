@@ -1,0 +1,48 @@
+.cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.filtersContainer{
+    display: flex;
+    justify-content: center;
+    grid-gap: 30px;
+    gap: 30px;
+    margin: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.filters {
+    display: flex;
+    grid-gap: 7px;
+    gap: 7px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.selects {
+    font-size: 18px;
+}
+
+.pagButton {
+    box-shadow: 10px 9px 12px 5px rgb(0 0 0 / 50%);
+    margin: 15px;
+    border-radius: 6px;
+    height: 30px;
+    width: 50px;
+}
+
+.actualPage {
+    box-shadow: 10px 9px 12px 5px rgb(0 0 0 / 50%);
+    background-color:  rgb(223, 159, 99);
+    font-size: 15px;
+    width: 50px;
+    height: 28px;
+    border-radius: 6px;
+    pointer-events: none;
+    color: white;
+}

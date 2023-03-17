@@ -1,0 +1,8 @@
+.inputSearch{
+    height: 35px;
+    border-radius: 8px;
+    padding: 4px;
+    background-color: rgb(240, 211, 184);
+    color: black;
+    font-size: 20px;    
+}

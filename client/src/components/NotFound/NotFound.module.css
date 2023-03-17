@@ -1,0 +1,26 @@
+
+
+  @keyframes slide-in-out {
+    0% {
+      transform: translateX(-200%);
+    }
+    25% {
+      transform: translateX(0%);
+    }
+    75% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(200%);
+    }
+  }
+
+  .pirateImg {
+    margin-top: 80;
+    height: 70vh;
+    animation: slide-in-out 5s linear infinite;
+  }
+  .notFoundTitle{
+    color: rgb(197, 6, 6);
+    font-size: 50px;
+  }
