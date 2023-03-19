@@ -72,13 +72,26 @@ const Form = () => {
     }
   };
 
+  const clearForm = () => {
+    setFormComplete(false)
+    setForm({
+      name: "",
+      difficulty: 0,
+      duration: 0,
+      season: "",
+      countries: [],
+    });
+  };
+
   const submitForm = async (e) => {
     e.preventDefault();
-    try {
-      await axios.post("/activities", form);
-      setCreated("Activity successfully created");
-    } catch (error) {
-      setCreated("Failed to create activity");
+    if (formComplete === true){
+      try {
+        await axios.post("/activities", form);
+        setCreated("Activity successfully created");
+      } catch (error) {
+        setCreated("Failed to create activity");
+      }
     }
   };
 
@@ -190,13 +203,16 @@ const Form = () => {
           </div>
         </div>
 
-        <div>
+        <div className={styles.buttons}>
           <button
             className={styles.createButton}
             disabled={!formComplete}
             type="submit"
           >
             Create
+          </button>
+          <button onClick={clearForm} className={styles.clearButton}>
+            Clear
           </button>
         </div>
         <span>{created}</span>

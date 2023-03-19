@@ -1,15 +1,17 @@
 .container {
   display: flex;
   flex-direction: column;
-  animation: slide-up 0.8s ease;
+  animation: slide-up 1s ease;
 }
 
 @keyframes slide-up {
   from {
-    transform: translateY(100%);
+    transform: translateY(20%);
+    opacity: 0.2;
   }
   to {
     transform: translateY(0%);
+    opacity: 1;
   }
 }
 
