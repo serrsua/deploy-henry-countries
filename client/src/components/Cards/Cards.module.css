@@ -52,9 +52,9 @@
 }
 
 .ship {
-    width: 10px;
+    width: 8px;
     position: absolute;
-    animation: animation-ship 40s linear infinite;
+    animation: animation-ship 60s linear infinite;
     z-index: -1;
 }
 
