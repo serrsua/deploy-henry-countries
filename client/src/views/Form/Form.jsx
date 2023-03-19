@@ -49,6 +49,7 @@ const Form = () => {
     });
     checkFormComplete();
     setErrors(validate({ ...form, [e.target.name]: e.target.value }));
+    e.target.value = "";
   };
 
   const handleDelete = (name) => {

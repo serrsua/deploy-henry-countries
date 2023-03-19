@@ -26,4 +26,4 @@ La idea de este proyecto es construir una aplicación en la que se pueda:
 ---
 
 
-
+<img src="./client/src/assets/71614.jpg">
