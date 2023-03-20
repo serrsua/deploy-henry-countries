@@ -10,7 +10,7 @@ export const validate = (data) => {
     if (data.duration === 0) errors.duration = "Choose duration";
     if (data.season === "") errors.season = "Choose a season";
 
-    if (data.countries.length === 0) errors.countries = "You must select at least one country"
+    if (!data.countries.length) errors.countries = "You must select at least one country"
   
     return errors;
   };

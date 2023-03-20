@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { validate } from "./validation";
@@ -29,6 +29,23 @@ const Form = () => {
     countries: [],
   });
 
+  useEffect(()=>{
+    const checkFormComplete = () => {
+      if (
+        !form.name ||
+        !form.difficulty ||
+        !form.duration ||
+        !form.season ||
+        !form.countries.length
+      ) {
+        setFormComplete(false);
+      } else {
+        setFormComplete(true);
+      }
+    };
+    checkFormComplete();
+  }, [form])
+
   const [errors, setErrors] = useState({});
   const [formComplete, setFormComplete] = useState(false);
   const [created, setCreated] = useState("");
@@ -38,16 +55,17 @@ const Form = () => {
       ...form,
       [e.target.name]: e.target.value,
     });
-    checkFormComplete();
     setErrors(validate({ ...form, [e.target.name]: e.target.value }));
   };
 
   const selectCountry = (e) => {
-    checkFormComplete();
-    setForm({
-      ...form,
-      countries: [...form.countries, e.target.value],
-    });
+    if (!form.countries.includes(e.target.value)){
+      setForm({
+        ...form,
+        countries: [...form.countries, e.target.value],
+      });
+    }
+    setErrors(validate({ ...form, countries: e.target.value }));        
     e.target.value = "";
   };
 
@@ -56,20 +74,6 @@ const Form = () => {
       ...form,
       countries: form.countries.filter((country) => country !== name),
     });
-  };
-
-  const checkFormComplete = () => {
-    if (
-      !form.name ||
-      !form.difficulty ||
-      !form.duration ||
-      !form.season ||
-      form.countries.length <= 0
-    ) {
-      setFormComplete(false);
-    } else {
-      setFormComplete(true);
-    }
   };
 
   const clearForm = () => {
@@ -88,10 +92,11 @@ const Form = () => {
     if (formComplete === true) {
       await axios.post("/activities", form);
       setCreated("Activity successfully created");
-    } else setCreated("Failed to create activity");
-    setFormComplete(false);
+    }
     clearForm();
   };
+
+  console.log(form);
 
   return (
     <form className={styles.form} onSubmit={submitForm}>
