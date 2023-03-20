@@ -43,12 +43,11 @@ const Form = () => {
   };
 
   const selectCountry = (e) => {
+    checkFormComplete();
     setForm({
       ...form,
       countries: [...form.countries, e.target.value],
     });
-    checkFormComplete();
-    setErrors(validate({ ...form, [e.target.name]: e.target.value }));
     e.target.value = "";
   };
 
@@ -65,7 +64,7 @@ const Form = () => {
       !form.difficulty ||
       !form.duration ||
       !form.season ||
-      !form.countries.length
+      form.countries.length <= 0
     ) {
       setFormComplete(false);
     } else {
@@ -74,7 +73,7 @@ const Form = () => {
   };
 
   const clearForm = () => {
-    setFormComplete(false)
+    setFormComplete(false);
     setForm({
       name: "",
       difficulty: 0,
@@ -86,14 +85,11 @@ const Form = () => {
 
   const submitForm = async (e) => {
     e.preventDefault();
-    if (formComplete === true){
-      try {
-        await axios.post("/activities", form);
-        setCreated("Activity successfully created");
-      } catch (error) {
-        setCreated("Failed to create activity");
-      }
-    }
+    if (formComplete === true) {
+      await axios.post("/activities", form);
+      setCreated("Activity successfully created");
+    } 
+    else setCreated("Failed to create activity");
   };
 
   return (

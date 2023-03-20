@@ -64,6 +64,11 @@ const Cards = () => {
 
   const filterByActivity = (e) => {
     dispatch(activityFilter(e.target.value));
+    if (e.target.value === "All") {
+      setCountries([...countries]);
+    } else {
+      setCountries([...filterCountries]);
+    }
     e.target.value = "";
   };
 
@@ -119,6 +124,7 @@ const Cards = () => {
             <option value="" hidden>
               Activity
             </option>
+            <option value="All">All</option>
             
 
             {Array.isArray(newAcitivities) ? (

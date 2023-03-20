@@ -189,14 +189,13 @@ export default function reducer(state = initialState, { type, payload }) {
       }
 
     case BY_ACTIVITY:
-      let auxActivity = [];
       let filterActivity;
 
       if (payload === "All") {
         return {
           ...state,
           countries: [...state.countries],
-          filteredCountries: [...auxActivity],
+          filteredCountries: [...state.countries],
         };
       } else {
         filterActivity = state.countries.filter((country) => {
