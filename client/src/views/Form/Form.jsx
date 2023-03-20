@@ -90,6 +90,7 @@ const Form = () => {
       setCreated("Activity successfully created");
     } 
     else setCreated("Failed to create activity");
+    setFormComplete(false)
   };
 
   return (
