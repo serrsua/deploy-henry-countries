@@ -96,8 +96,6 @@ const Form = () => {
     clearForm();
   };
 
-  console.log(form);
-
   return (
     <form className={styles.form} onSubmit={submitForm}>
       <div className={styles.inputsContainer}>
