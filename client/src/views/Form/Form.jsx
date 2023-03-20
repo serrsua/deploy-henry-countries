@@ -88,9 +88,9 @@ const Form = () => {
     if (formComplete === true) {
       await axios.post("/activities", form);
       setCreated("Activity successfully created");
-    } 
-    else setCreated("Failed to create activity");
-    setFormComplete(false)
+    } else setCreated("Failed to create activity");
+    setFormComplete(false);
+    clearForm();
   };
 
   return (
