@@ -7,7 +7,7 @@ import Form from "./views/Form/Form";
 import NavBar from "./components/NavBar/NavBar";
 import NotFound  from "./components/NotFound/NotFound";
 import axios from "axios";
-axios.defaults.baseURL = "http://localhost:3001";
+// axios.defaults.baseURL = "http://localhost:3001";
 
 function App() {
   const location = useLocation();
