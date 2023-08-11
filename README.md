@@ -25,5 +25,10 @@ La idea de este proyecto es construir una aplicación en la que se pueda:
 
 ---
 
+<img src="./client/src/assets/01 - portada.jpg">
+<img src="./client/src/assets/02 - home.jpg">
+<img src="./client/src/assets/03 - busqueda.jpg">
+<img src="./client/src/assets/04 - filtro activities.jpg">
+<img src="./client/src/assets/05 - Activity form.png">
 
 <img src="./client/src/assets/71614.jpg">
