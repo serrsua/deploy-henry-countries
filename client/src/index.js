@@ -10,7 +10,7 @@ import axios from "axios";
 
 // axios.defaults.baseURL = 'http://localhost:3001';
 // axios.defaults.baseURL = 'https://deploy-henry-countries-production.up.railway.app/';
-axios.defaults.baseURL = "https://countries-back-pxz3.onrender.com"
+axios.defaults.baseURL = "https://countries-back-4340.onrender.com"
 
 createRoot(document.getElementById("root")).render(
   <Provider store={store}>
